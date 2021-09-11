@@ -1,9 +1,6 @@
 # experimentation
 I am a repo used to experiment on GItHub "stuff" available to public repos.  
 
-initial change
-change 2
+added branch protection rule
 
-change 3
-
-seeing what happens with this
+made some modifications
