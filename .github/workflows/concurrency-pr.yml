@@ -5,7 +5,9 @@ on:
   pull_request:
     branches: [ main ]
 
-concurrency: tests-on-pr
+concurrency: 
+  group: tests-on-pr
+  cancel-in-progress: true 
 
 jobs:
   # This workflow contains a single job called "build"
