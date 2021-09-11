@@ -27,5 +27,5 @@ jobs:
       - name: Test The Code
         run: |
           echo "Starting Code Build"
-          sleep 10m
+          sleep 2m
           echo "Finish Code Build"
