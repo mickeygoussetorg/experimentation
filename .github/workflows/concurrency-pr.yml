@@ -1,0 +1,31 @@
+# we are not actually building/testing with this code, we are just doing a simulation to evaluate the concurrency option
+name: Concurrenct PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+concurrency: tests-on-pr
+
+jobs:
+  # This workflow contains a single job called "build"
+  build-and-test-on-pr:
+    name: Build and Test On Pull Request
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: Build The Code
+        run: |
+          echo "Starting Code Build"
+          sleep 2m
+          echo "Finish Code Build"
+
+
+      # Long Running Tests
+      - name: Test The Code
+        run: |
+          echo "Starting Code Build"
+          sleep 10m
+          echo "Finish Code Build"
