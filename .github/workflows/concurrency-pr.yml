@@ -6,7 +6,8 @@ on:
     branches: [ main ]
 
 concurrency: 
-  group: tests-on-pr-${{ github.head_ref }}
+  #group: tests-on-pr-${{ github.head_ref }}
+  group: build-and-test
   # cancel-in-progress: true 
 
 jobs:
@@ -18,8 +19,8 @@ jobs:
 
     steps:
       
-      - name: Output HeadRef
-        run: echo "${{ github.head_ref }}"
+      #- name: Output HeadRef
+      #  run: echo "${{ github.head_ref }}"
       
       - name: Build The Code
         run: |
