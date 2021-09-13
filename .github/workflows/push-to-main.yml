@@ -5,27 +5,31 @@ on:
     branches:
     - main
 
-#concurrency: 
-  #group: tests-on-pr-${{ github.head_ref }}
-  #group: build-and-test
-  #cancel-in-progress: true 
-
 jobs:
   # This workflow contains a single job called "build"
-  build-and-deploy:
-    name: Build and Deploy
+  build:
+    name: Build
     
     runs-on: ubuntu-latest
 
     steps:
-      
-     
       - name: Build The Code
         run: |
           echo "Starting Code Build"
           sleep 2m
           echo "Finish Code Build"
-      # Long Running Tests
+      
+  deploy:
+    name: Deploy
+    needs:
+    - build
+    concurrency: 
+      group: my-deploy
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      
       - name: Deploy The Code
         run: |
           echo "Starting Code Deploy"
