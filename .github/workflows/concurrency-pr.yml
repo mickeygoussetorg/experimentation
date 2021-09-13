@@ -6,8 +6,8 @@ on:
     branches: [ main ]
 
 concurrency: 
-  #group: tests-on-pr-${{ github.head_ref }}
-  group: build-and-test
+  group: tests-on-pr-${{ github.head_ref }}
+  #group: build-and-test
   cancel-in-progress: true 
 
 jobs:
@@ -21,6 +21,11 @@ jobs:
       
       - name: Output HeadRef
         run: echo "${{ github.head_ref }}"
+        
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       
       - name: Build The Code
         run: |
