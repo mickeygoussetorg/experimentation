@@ -8,7 +8,7 @@ on:
 concurrency: 
   #group: tests-on-pr-${{ github.head_ref }}
   group: build-and-test
-  #cancel-in-progress: true 
+  cancel-in-progress: true 
 
 jobs:
   # This workflow contains a single job called "build"
