@@ -1,13 +1,13 @@
 # we are not actually building/testing with this code, we are just doing a simulation to evaluate the concurrency option
-name: Concurrenct PR
+name: Concurrency PR
 
 on:
   pull_request:
     branches: [ main ]
 
-#concurrency: 
+concurrency: 
   #group: tests-on-pr-${{ github.head_ref }}
-  # group: build-and-test
+  group: build-and-test
   #cancel-in-progress: true 
 
 jobs:
