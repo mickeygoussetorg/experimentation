@@ -14,7 +14,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          Write-Output "color=yellow" >> $ENV:GITHUB_ENV
+          Write-Output "color=green" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       - name: Use the value
         id: step_two
         run: |
