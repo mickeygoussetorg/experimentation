@@ -1,37 +1,22 @@
 name: testing
 
 on:
-  push:
-    branches:
-    - main
+  workflow_dispatch:
 
 jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build
     
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-      - name: Build The Code
+      - name: testing
         run: |
-          echo "Starting Code Build"
-          sleep 2m
-          echo "Finish Code Build"
-      
-  deploy:
-    name: Deploy
-    needs:
-    - build
-    concurrency: 
-      group: my-deploy
+          $version = get-date
+          echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+          
+          
     
-    runs-on: ubuntu-latest
-
-    steps:
       
-      - name: Deploy The Code
-        run: |
-          echo "Starting Code Deploy"
-          sleep 2m
-          echo "Finish Code Deploy"
+  
