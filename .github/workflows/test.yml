@@ -24,6 +24,10 @@ jobs:
           echo "${{ env.color }}" # This will output 'yellow'
           echo "$env:windir"
           
+      - name: runner
+        run: |
+          echo ${{runner.temp}}
+          
     
       
   
