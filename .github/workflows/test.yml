@@ -7,8 +7,13 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build
+    env:
+      color1: 1
+      color2: ${{ env.color1 }}
     
     runs-on: windows-latest
+    
+    
 
     steps:
       - name: Set the value
