@@ -22,7 +22,7 @@ jobs:
         id: step_two
         run: |
           echo "${{ env.color }}" # This will output 'yellow'
-          echo "$env:windir
+          echo "$env:windir"
           
     
       
