@@ -7,6 +7,8 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build
+    env:
+      mickey: ${{runner.temp}}
    
     runs-on: windows-latest
     
