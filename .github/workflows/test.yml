@@ -11,15 +11,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: testing
+      - name: Set the value
+        id: step_one
         run: |
-          $version = get-date
-          #echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-          echo "mickey=rocks" >> $GITHUB_ENV
-          
-      - name: testing 2
+          echo "action_state=yellow" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
         run: |
-            echo ${{ env.mickey }}
+          echo "${{ env.action_state }}" # This will output 'yellow'
     
       
   
