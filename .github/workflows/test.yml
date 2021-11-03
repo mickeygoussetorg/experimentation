@@ -24,6 +24,8 @@ jobs:
         id: step_two
         run: |
           echo "${{ env.color }}" # This will output 'yellow'
+          echo "${{ env.color1 }}
+          echo "${{ env.color2 }}
     
       
   
