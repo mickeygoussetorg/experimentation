@@ -7,10 +7,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Build
-    env:
-      color1: 1
-      color2: ${{ env.color1 }}
-    
+   
     runs-on: windows-latest
     
     
@@ -20,12 +17,13 @@ jobs:
         id: step_one
         run: |
           Write-Output "color=green" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+
       - name: Use the value
         id: step_two
         run: |
           echo "${{ env.color }}" # This will output 'yellow'
-          echo "${{ env.color1 }}
-          echo "${{ env.color2 }}
+          echo "${{ env.windir }}
+          
     
       
   
