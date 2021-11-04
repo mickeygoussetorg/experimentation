@@ -1,7 +1,7 @@
 name: example-client-payload-action
 on: repository_dispatch
-  types:
-    - deploycode
+#  types:
+#    - deploycode
 jobs:
   test:
     name: Test
