@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
 env:
-  mickey: ${{runner.temp}}
+  mickey: mouse
   var1: 1
 
 jobs:
